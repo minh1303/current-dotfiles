@@ -64,13 +64,22 @@ class PlayerManager:
     def write_output(self, text, player):
         logger.debug(f"Writing output: {text}")
         title = ""
+        className = "custom-"
+
+        if (player.props.status == "Playing"):
+            className = className + "playing"
+        else:
+            className = className + "pausing"
+
+
         if text["title"] == "":
             title = "Not playing"
         else: 
             title= text["status"] + " " + text["title"]
+
         output = {"text" : title, 
                   "tooltip" : text["title"] + " - " + text["artist"],
-                  "class": "custom-" + player.props.player_name,
+                  "class": className,
                   "alt": player.props.player_name}
 
         sys.stdout.write(json.dumps(output) + "\n")

@@ -5,10 +5,10 @@
 }
 
 window#waybar {
-    background: rgba(30, 30, 46, 0.5);
+    background: rgba(30, 30, 46, 0.4);
     transition-property: background-color;
     color: #f2eded;
-    transition-duration: .5s;
+    transition-duration: 1.5s;
 }
 
 window#waybar.hidden {
@@ -41,8 +41,8 @@ button:hover {
 #workspaces {
     background: #282738;
     margin: 5px 5px 5px 5px;
-    padding: 0px 0px 0px 5px;
-    border-radius: 10px;
+    padding: 0px 5px 0px 5px;
+    border-radius: 15px;
     font-weight: normal;
     font-style: normal;
 }
@@ -50,13 +50,13 @@ button:hover {
 #workspaces button {
     padding: 0px 5px;
     color: #928374;
-    border-radius: 10px;
+    border-radius: 15px;
 }
 
 #workspaces button.active {
     color: #f2eded;
     background-color: #848db8;
-    
+
 }
 
 #workspaces button:hover {
@@ -89,17 +89,17 @@ button:hover {
 }
 
 #wireplumber {
-    border:solid 2px #98473b;
+    border: solid 2px #98473b;
 
 }
 
 #battery {
-    border:solid 2px #304b40;
+    border: solid 2px #304b40;
 }
 
 
 #cpu {
-    border : solid 2px #d36c40;
+    border: solid 2px #d36c40;
 }
 
 #memory {
@@ -108,7 +108,8 @@ button:hover {
 
 
 
-#clock, #custom-powermenu {
+#clock,
+#custom-powermenu {
     background-color: #282738;
     border: solid 2px #848db8
 }
@@ -121,14 +122,19 @@ button:hover {
 
 
 
+#custom-spotify.custom-pausing {
+    background-color: #eb4d4b;
+}
+
+
 /* If workspaces is the leftmost module, omit left margin */
 .modules-left>widget:first-child>#workspaces {
-    margin-left: 0;
+    margin-left: 10px;
 }
 
 /* If workspaces is the rightmost module, omit right margin */
 .modules-right>widget:last-child>#workspaces {
-    margin-right: 0;
+    margin-right: 10px;
 }
 
 
@@ -161,8 +167,7 @@ label:focus {
 }
 
 #custom-powermenu {
-    color: #ed8796;
-    margin-right: 1px;
+    background-color: #eb4d4b;
     padding: 5px;
     padding-right: 8px;
 }
@@ -170,7 +175,7 @@ label:focus {
 
 
 #wireplumber.muted {
-    color: #f53c3c;
+    background-color: #f53c3c;
 }
 
 

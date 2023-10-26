@@ -1,33 +1,41 @@
 {
-    "layer": "top", // Waybar at top layer
-    // "position": "bottom", // Waybar position (top|bottom|left|right)
-    // "width": 1280, // Waybar width
+    "layer": "top", 
     "height": 40,
-    "spacing": 3, // Gaps between modules (4px)
-    "modules-left": ["hyprland/workspaces"],
-    "modules-center": ["custom/spotify"],
-    "modules-right": ["tray","wireplumber", "cpu", "memory",  "battery", "clock","custom/powermenu"],
- 
-     "custom/powermenu" : {
-	"format" : "  ",
-	"on-click":"sleep 0.1 && ~/.config/rofi/scripts/power",
-	"tooltip" :false
-},
+    "spacing": 0,
+    "modules-left": [
+        "hyprland/workspaces"
+    ],
+    "modules-center": [
+        "custom/spotify"
+    ],
+    "modules-right": [
+        "tray",
+        "wireplumber",
+        "cpu",
+        "memory",
+        "battery",
+        "clock",
+        "custom/powermenu"
+    ],
+    "custom/powermenu": {
+        "format": "  ",
+        "on-click": "sleep 0.1 && ~/.config/rofi/scripts/power",
+        "tooltip": false
+    },
     "tray": {
         "icon-size": 23,
         "spacing": 10
     },
     "clock": {
-        // "timezone": "America/New_York",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
         "format": "{:%A, %H:%M}",
-	"format-alt":"{:%d-%m-%Y}"
+        "format-alt": "{:%d-%m-%Y}"
     },
-    "hyprland/workspaces":{
-	"format" : "● {name}",
-	"persistent-workspaces" : {
-		"*": 5,
-	}
+    "hyprland/workspaces": {
+        "format": "● {name}",
+        "persistent-workspaces": {
+            "*": 5
+        }
     },
     "cpu": {
         "format": " {usage}%",
@@ -36,47 +44,48 @@
     "memory": {
         "format": " {}%"
     },
-   
     "battery": {
         "states": {
-            // "good": 95,
             "warning": 30,
             "critical": 15
         },
         "format": "{icon}  {capacity}%",
         "format-charging": "{capacity}% ",
         "format-plugged": "{capacity}% ",
-        // "format-good": "", // An empty format will hide the module
-        // "format-full": "",
-        "format-icons": ["", "", "", "", ""],
-	"on-click" : ""
+        "format-icons": [
+            "",
+            "",
+            "",
+            "",
+            ""
+        ],
+        "on-click": ""
     },
-
- "wireplumber": {
-        // "scroll-step": 1, // %, can be a float
+    "wireplumber": {
         "format": "{icon} {volume}%",
         "format-bluetooth": "{volume}% {icon} {format_source}",
         "format-bluetooth-muted": " {icon} {format_source}",
         "format-muted": " {volume}%",
         "format-icons": {
-       
-            "default": ["", ""]
+            "default": [
+                "",
+                ""
+            ]
         },
-	"on-click": "exec  wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+        "on-click": "exec  wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
         "on-click-right": "pavucontrol",
-
+        "tooltip": true
     },
-"custom/spotify": {
-   "exec": "$HOME/.config/waybar/custom_modules/mediaplayer.py 2> /dev/null",
-   "escape": true,
-   "format" : "{}",
-    "return-type": "json",
-    "on-click-right" : "xdg-open https://www.youtube.com",
-    "on-click": "playerctl play-pause",
-    "on-scroll-up": "playerctl next",
-    "on-scroll-down": "playerctl previous",
-    "max-length" : 50,
-    "tooltip": true,
-},
+    "custom/spotify": {
+        "exec": "$HOME/.config/waybar/custom_modules/mediaplayer.py 2> /dev/null",
+        "escape": true,
+        "format": "{}",
+        "return-type": "json",
+        "on-click-right": "xdg-open https://www.youtube.com",
+        "on-click": "playerctl play-pause",
+        "on-scroll-up": "playerctl next",
+        "on-scroll-down": "playerctl previous",
+        "max-length": 50,
+        "tooltip": true
+    }
 }
-
